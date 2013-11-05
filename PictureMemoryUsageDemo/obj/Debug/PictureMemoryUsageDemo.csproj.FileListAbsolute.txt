@@ -17,3 +17,8 @@ c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\P
 c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\PictureMemoryUsageDemo.dll
 c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\PictureMemoryUsageDemo.pdb
 c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\XapCacheFile.xml
+c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\Microsoft.Phone.Controls.dll
+c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\PictureMemoryUsageDemo.csprojResolveAssemblyReference.cache
+c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\SinglePictureView.g.cs
+c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\Views\MemoryLogView.g.cs

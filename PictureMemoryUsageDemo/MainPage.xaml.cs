@@ -9,33 +9,83 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PictureMemoryUsageDemo.Resources;
 
+using PictureMemoryUsageDemo.ViewModels;
+using PictureMemoryUsageDemo.EntityModels;
+using PictureMemoryUsageDemo.Common;
+using Microsoft.Phone.Info;
+
 namespace PictureMemoryUsageDemo
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        #region Property
+        TripPictureViewModel _tripPicViewModel = null;
+        #endregion
+
         public MainPage()
         {
+            LogRecordHelper.AddLogRecord("MainPage Init Before:",  DeviceStatus.ApplicationCurrentMemoryUsage.ToString()+" KB");
             InitializeComponent();
-
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+            this.Loaded += MainPage_Loaded;
+            LogRecordHelper.AddLogRecord("MainPage Init After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
         }
 
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
+        #region Action
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            LogRecordHelper.AddLogRecord("MainPage Load Before:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+            if (_tripPicViewModel == null)
+                _tripPicViewModel = new TripPictureViewModel();
+            this.DataContext = _tripPicViewModel;
+            LogRecordHelper.AddLogRecord("MainPage Load After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+        }
 
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
+        private void ControlMemory_LB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                TripPictureInfo tripPicInfo = this.ControlMemory_LB.SelectedItem as TripPictureInfo;
+                if (tripPicInfo == null)
+                    return;
 
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+                this.ControlMemory_LB.SelectedIndex = -1;
+                this.NavigationService.Navigate(new Uri("/SinglePictureView.xaml?Url="+tripPicInfo.TripPictureUrl,UriKind.RelativeOrAbsolute));
+            }
+        }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Views/MemoryLogView.xaml",UriKind.RelativeOrAbsolute));
+        }
+
+        private void AddPictureRecord_AP_Click(object sender, EventArgs e)
+        {
+            if (_tripPicViewModel != null)
+                _tripPicViewModel.LoadTripAddressPictureData();
+        }
+        #endregion
+
+        #region Control Memory Useage
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                
+            }
+        }
+
+        ~MainPage()
+        {
+            LogRecordHelper.AddLogRecord("MainPage Destructor Excuted:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+        }
+        #endregion
+
+     
+
+     
+
+
+
     }
 }

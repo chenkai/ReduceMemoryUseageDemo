@@ -93,6 +93,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\LogRecordHelper.cs" />
+    <Compile Include="EntityModels\LogRecordInfo.cs" />
+    <Compile Include="EntityModels\TripPictureInfo.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -103,6 +106,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SinglePictureView.xaml.cs">
+      <DependentUpon>SinglePictureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\TripPictureViewModel.cs" />
+    <Compile Include="Views\MemoryLogView.xaml.cs">
+      <DependentUpon>MemoryLogView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -110,6 +120,14 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SinglePictureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemoryLogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +158,29 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\670%281%29.jpg" />
+    <Content Include="Images\670%2810%29.jpg" />
+    <Content Include="Images\670%2811%29.jpg" />
+    <Content Include="Images\670%2812%29.jpg" />
+    <Content Include="Images\670%2813%29.jpg" />
+    <Content Include="Images\670%2814%29.jpg" />
+    <Content Include="Images\670%2815%29.jpg" />
+    <Content Include="Images\670%2816%29.jpg" />
+    <Content Include="Images\670%2817%29.jpg" />
+    <Content Include="Images\670%2818%29.jpg" />
+    <Content Include="Images\670%2819%29.jpg" />
+    <Content Include="Images\670%282%29.jpg" />
+    <Content Include="Images\670%2820%29.jpg" />
+    <Content Include="Images\670%283%29.jpg" />
+    <Content Include="Images\670%284%29.jpg" />
+    <Content Include="Images\670%285%29.jpg" />
+    <Content Include="Images\670%286%29.jpg" />
+    <Content Include="Images\670%287%29.jpg" />
+    <Content Include="Images\670%288%29.jpg" />
+    <Content Include="Images\670%289%29.jpg" />
+    <Content Include="Images\670.jpg" />
+    <Content Include="Images\Add-New.png" />
+    <Content Include="Images\Nodes.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -147,6 +188,13 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\..\..\..\..\Desktop\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

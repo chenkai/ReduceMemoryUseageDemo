@@ -71,8 +71,18 @@ namespace PictureMemoryUsageDemo
         {
             if (e.NavigationMode == NavigationMode.Back)
             {
-                
-            }
+ 
+            }          
+        }
+
+        private void ClearImageCache()
+        {
+ 
+        }
+
+        private void ClearRegisterEvent()
+        {
+            this.ControlMemory_LB.SelectionChanged -= ControlMemory_LB_SelectionChanged;
         }
 
         ~MainPage()

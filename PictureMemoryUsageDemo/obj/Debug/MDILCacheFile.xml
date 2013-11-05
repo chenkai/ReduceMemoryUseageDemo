@@ -1,5 +1,5 @@
-﻿<xapCache source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\PictureMemoryUsageDemo_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="11/5/2013 6:20:25 PM">
-  <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\PictureMemoryUsageDemo.dll" archivePath="PictureMemoryUsageDemo.dll" lastWriteTime="11/5/2013 6:20:25 PM" />
+﻿<xapCache source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\PictureMemoryUsageDemo_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="11/5/2013 6:48:38 PM">
+  <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\obj\Debug\PictureMemoryUsageDemo.dll" archivePath="PictureMemoryUsageDemo.dll" lastWriteTime="11/5/2013 6:48:37 PM" />
   <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="11/5/2013 3:47:02 PM" />
   <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="11/5/2013 3:47:02 PM" />
   <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="11/5/2013 3:47:02 PM" />
@@ -33,5 +33,5 @@
   <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="11/5/2013 3:47:02 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="3/3/2013 7:40:38 PM" />
   <file source="c:\users\kai.chen\Desktop\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="9/10/2013 4:58:45 PM" />
-  <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/5/2013 4:28:46 PM" />
+  <file source="c:\users\kai.chen\documents\visual studio 2012\Projects\PictureMemoryUsageDemo\PictureMemoryUsageDemo\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/5/2013 6:46:58 PM" />
 </xapCache>

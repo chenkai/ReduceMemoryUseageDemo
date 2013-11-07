@@ -24,20 +24,20 @@ namespace PictureMemoryUsageDemo
 
         public MainPage()
         {
-            LogRecordHelper.AddLogRecord("MainPage Init Before:",  DeviceStatus.ApplicationCurrentMemoryUsage.ToString()+" KB");
+            LogRecordHelper.AddLogRecord("MainPage Init Before:",  DeviceStatus.ApplicationCurrentMemoryUsage.ToString()+" B");
             InitializeComponent();
             this.Loaded += MainPage_Loaded;
-            LogRecordHelper.AddLogRecord("MainPage Init After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+            LogRecordHelper.AddLogRecord("MainPage Init After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " B");
         }
 
         #region Action
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            LogRecordHelper.AddLogRecord("MainPage Load Before:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+            LogRecordHelper.AddLogRecord("MainPage Load Before:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " B");
             if (_tripPicViewModel == null)
                 _tripPicViewModel = new TripPictureViewModel();
             this.DataContext = _tripPicViewModel;
-            LogRecordHelper.AddLogRecord("MainPage Load After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+            LogRecordHelper.AddLogRecord("MainPage Load After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " B");
         }
 
         private void ControlMemory_LB_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -69,15 +69,36 @@ namespace PictureMemoryUsageDemo
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            LogRecordHelper.AddLogRecord("Clear Before:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " B");
             if (e.NavigationMode == NavigationMode.Back)
             {
- 
-            }          
+                ClearImageCache();
+                _tripPicViewModel.TripPictureCol.Clear();
+            }
+            LogRecordHelper.AddLogRecord("Clear After:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " B");
+        }
+
+        protected override void OnRemovedFromJournal(JournalEntryRemovedEventArgs e)
+        {
+            ClearRegisterUIElementEvent();
+            this.DataContext = null;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            base.OnRemovedFromJournal(e);
         }
 
         private void ClearImageCache()
         {
- 
+            if (_tripPicViewModel.TripPictureCol.Count > 0)
+            {
+                foreach(TripPictureInfo queryInfo in _tripPicViewModel.TripPictureCol)
+                    queryInfo.TirpPictureSource.UriSource=null;
+            }
+        }
+
+        private void ClearRegisterUIElementEvent()
+        {
+            this.ControlMemory_LB.SelectionChanged -= ControlMemory_LB_SelectionChanged;
         }
 
         private void ClearRegisterEvent()
@@ -87,15 +108,8 @@ namespace PictureMemoryUsageDemo
 
         ~MainPage()
         {
-            LogRecordHelper.AddLogRecord("MainPage Destructor Excuted:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " KB");
+            LogRecordHelper.AddLogRecord("MainPage Destructor Excuted:", DeviceStatus.ApplicationCurrentMemoryUsage.ToString() + " B");
         }
-        #endregion
-
-     
-
-     
-
-
-
+        #endregion   
     }
 }

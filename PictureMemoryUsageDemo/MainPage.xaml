@@ -28,7 +28,7 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,0,12,0">          
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,0,12,0">         
             <ListBox x:Name="ControlMemory_LB" ItemsSource="{Binding TripPictureCol}" SelectionChanged="ControlMemory_LB_SelectionChanged">  
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -38,7 +38,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="10,0,0,0">
-                            <Image Source="{Binding TripPictureUrl}" Width="100" Height="100"></Image>
+                            <Image Source="{Binding TirpPictureSource}" Width="100" Height="100"></Image>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
